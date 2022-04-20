@@ -29,6 +29,7 @@ use super::fp2::FP2;
 use super::fp4::FP4;
 use super::rom;
 use crate::types::{CurvePairingType, SexticTwist, SignOfX};
+use crate::std::Vec;
 
 #[allow(non_snake_case)]
 #[inline(always)]

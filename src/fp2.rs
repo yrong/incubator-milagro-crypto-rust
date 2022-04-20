@@ -17,14 +17,12 @@ specific language governing permissions and limitations
 under the License.
 */
 
-use std::fmt;
-use std::str::SplitWhitespace;
-
 use super::big::Big;
 use super::dbig::DBig;
 use super::fp;
 use super::fp::FP;
 use super::rom;
+use crate::std::{string::String, str::SplitWhitespace, fmt, format};
 
 #[derive(Clone)]
 pub struct FP2 {

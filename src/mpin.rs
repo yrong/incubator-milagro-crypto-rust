@@ -17,9 +17,6 @@ specific language governing permissions and limitations
 under the License.
 */
 
-use std::time::SystemTime;
-use std::time::UNIX_EPOCH;
-
 use super::big;
 use super::big::Big;
 use super::ecp;
@@ -33,9 +30,9 @@ use crate::hash256::HASH256;
 use crate::hash384::HASH384;
 use crate::hash512::HASH512;
 use crate::rand::RAND;
+use crate::std::{Vec, time::UNIX_EPOCH, time::SystemTime};
 
 // MPIN API Functions
-
 // Configure mode of operation
 pub const EFS: usize = big::MODBYTES as usize;
 pub const EGS: usize = big::MODBYTES as usize;

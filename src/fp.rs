@@ -17,14 +17,13 @@ specific language governing permissions and limitations
 under the License.
 */
 
-use std::str::FromStr;
-
 use super::big;
 use super::big::Big;
 use super::dbig::DBig;
 use super::rom;
 use crate::arch::{self, Chunk};
 use crate::types::ModType;
+use crate::std::{string::String, string::ToString, str::FromStr, str::SplitWhitespace, format, fmt};
 
 #[derive(Clone)]
 pub struct FP {
@@ -53,8 +52,6 @@ impl fmt::Debug for FP {
 }
 
 pub use super::rom::{MOD8, MODBITS, MODTYPE, SH};
-use std::fmt;
-use std::str::SplitWhitespace;
 
 pub const FEXCESS: i32 = (1 << SH) - 1;
 pub const OMASK: Chunk = (-1) << (MODBITS % big::BASEBITS);

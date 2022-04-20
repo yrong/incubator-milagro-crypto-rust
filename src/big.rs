@@ -21,9 +21,6 @@ use super::dbig::DBig;
 use crate::arch::{self, Chunk, DChunk};
 use crate::rand::RAND;
 
-use std::cmp::Ordering;
-use std::fmt;
-
 pub use super::rom::BASEBITS;
 pub use super::rom::MODBYTES;
 
@@ -34,6 +31,7 @@ pub const HBITS: usize = BASEBITS / 2;
 pub const HMASK: Chunk = (1 << HBITS) - 1;
 pub const NEXCESS: isize = 1 << (arch::CHUNK - BASEBITS - 1);
 pub const BIGBITS: usize = MODBYTES * 8;
+use crate::std::{string::String, fmt, cmp::Ordering, format};
 
 #[derive(Clone)]
 pub struct Big {
