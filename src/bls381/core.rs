@@ -858,7 +858,7 @@ mod tests {
 
     #[test]
     fn test_hash_to_curve_g2() {
-        const H2C_SUITE_G2: &str = "BLS12381G2_XMD:SHA-256_SSWU_RO_";
+        const H2C_SUITE_G2: &str = "BLS12381G2_XMD_SHA-256_SSWU_RO_";
         // Read hash to curve test vector
         let reader = json_reader(H2C_SUITE_G2);
         let test_vectors: Bls12381Ro = serde_json::from_reader(reader).unwrap();
@@ -939,7 +939,7 @@ mod tests {
 
     #[test]
     fn test_hash_to_curve_g1() {
-        const H2C_SUITE_G1: &str = "BLS12381G1_XMD:SHA-256_SSWU_RO_";
+        const H2C_SUITE_G1: &str = "BLS12381G1_XMD_SHA-256_SSWU_RO_";
 
         // Read hash to curve test vector
         let reader = json_reader(H2C_SUITE_G1);
