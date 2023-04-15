@@ -23,14 +23,14 @@ use super::fp::FP;
 use super::rom;
 
 pub use super::rom::{AESKEY, CURVETYPE, CURVE_PAIRING_TYPE, HASH_TYPE, SEXTIC_TWIST, SIGN_OF_X};
+use crate::std::{fmt, format, str::SplitWhitespace, string::String};
 pub use crate::types::CurveType;
-use crate::std::{string::String, fmt, str::SplitWhitespace, format};
 
 #[derive(Clone)]
 pub struct ECP {
-    x: FP,
-    y: FP,
-    z: FP,
+    pub x: FP,
+    pub y: FP,
+    pub z: FP,
 }
 
 impl PartialEq for ECP {
@@ -1284,7 +1284,6 @@ impl ECP {
         let P = self.mul(&c);
         *self = P.clone();
     }
-
 
     /// Map It
     ///

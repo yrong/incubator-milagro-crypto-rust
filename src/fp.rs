@@ -22,8 +22,10 @@ use super::big::Big;
 use super::dbig::DBig;
 use super::rom;
 use crate::arch::{self, Chunk};
+use crate::std::{
+    fmt, format, str::FromStr, str::SplitWhitespace, string::String, string::ToString,
+};
 use crate::types::ModType;
-use crate::std::{string::String, string::ToString, str::FromStr, str::SplitWhitespace, format, fmt};
 
 #[derive(Clone)]
 pub struct FP {
