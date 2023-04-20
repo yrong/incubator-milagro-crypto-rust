@@ -17,16 +17,18 @@ specific language governing permissions and limitations
 under the License.
 */
 
-use super::big;
-use super::big::Big;
-use super::fp::FP;
+pub use super::big;
+pub use super::big::Big;
+pub use super::fp::FP;
 use super::rom;
 
 pub use super::rom::{AESKEY, CURVETYPE, CURVE_PAIRING_TYPE, HASH_TYPE, SEXTIC_TWIST, SIGN_OF_X};
 use crate::std::{fmt, format, str::SplitWhitespace, string::String};
 pub use crate::types::CurveType;
+use codec::{Decode, Encode, MaxEncodedLen};
+use scale_info::TypeInfo;
 
-#[derive(Clone)]
+#[derive(Clone, Encode, Decode, TypeInfo, MaxEncodedLen)]
 pub struct ECP {
     pub x: FP,
     pub y: FP,

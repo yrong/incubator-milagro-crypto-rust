@@ -28,7 +28,7 @@ pub mod proof_of_possession;
 // Expose helper functions for external libraries.
 pub mod utils;
 
-mod core;
+pub mod core;
 mod iso;
 
 mod iso_constants_x32;

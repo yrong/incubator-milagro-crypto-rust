@@ -96,13 +96,6 @@ pub mod bls383 {
 #[cfg(feature = "bls381")]
 #[path = "./"]
 pub mod bls381 {
-    #[cfg(target_pointer_width = "32")]
-    #[path = "roms/rom_bls381_32.rs"]
-    pub mod rom;
-    #[cfg(target_pointer_width = "64")]
-    #[path = "roms/rom_bls381_32.rs"]
-    pub mod rom;
-
     pub mod big;
     pub mod bls381;
     pub mod dbig;
@@ -115,6 +108,8 @@ pub mod bls381 {
     pub mod hash_to_curve;
     pub mod mpin;
     pub mod pair;
+    #[path = "roms/rom_bls381_32.rs"]
+    pub mod rom;
 }
 
 #[cfg(feature = "fp512bn")]

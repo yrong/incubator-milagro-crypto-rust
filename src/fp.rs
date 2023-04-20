@@ -26,8 +26,10 @@ use crate::std::{
     fmt, format, str::FromStr, str::SplitWhitespace, string::String, string::ToString,
 };
 use crate::types::ModType;
+use codec::{Decode, Encode, MaxEncodedLen};
+use scale_info::TypeInfo;
 
-#[derive(Clone)]
+#[derive(Clone, Encode, Decode, TypeInfo, MaxEncodedLen)]
 pub struct FP {
     pub x: Big,
     pub xes: i32,
